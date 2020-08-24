@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: worker
-        image: coletyl/worker
+        image: bhutaniarnav/worker-1
         env:
          - name: KAFKA_HOST_NAME
            value: kafka-service-train

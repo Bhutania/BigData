@@ -14,12 +14,13 @@ spec:
     spec:
       containers:
         - name: trainer
-          image: coletyl/trainer
+          image: bhutaniarnav/trainer-1
           ports:
             - containerPort: 9999
           env:
            - name: KAFKA_HOST_NAME
              value: kafka-service-train
+          imagePullPolicy: Always
 
 ---
 

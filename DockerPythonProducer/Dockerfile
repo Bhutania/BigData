@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:latest-py3
+FROM rocm/tensorflow:latest
 LABEL maintianer="Tyler Cole"
 
 RUN pip3 install keras

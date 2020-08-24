@@ -1,21 +1,21 @@
-FROM tensorflow/tensorflow:latest-py3
+FROM rocm/tensorflow:rocm3.3-tf1.13-centos-mkl-dev
 LABEL maintianer="Tyler Cole"
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV CENTOS_FRONTEND noninteractive
 
 ADD Keras-CoDeepNEAT /Keras-CoDeepNEAT
 ADD run_mnist.py /run_mnist.py
 
-RUN apt-get update && apt-get install --no-install-recommends --no-install-suggests -y graphviz libgraphviz-dev
+RUN yum install -y python3.6-dev graphviz* libgraphviz-dev  
 
-RUN pip3 install kafka-python
-RUN pip3 install keras
-RUN pip3 install networkx
-RUN pip3 install pydot
-RUN pip3 install graphviz
-RUN pip3 install pygraphviz
-RUN pip3 install sklearn
-RUN pip3 install matplotlib
+RUN pip install kafka-python
+RUN pip install -Iv keras==2.2.5
+RUN pip install -Iv networkx==2.3
+RUN pip install -Iv pydot==1.4.1
+RUN pip install graphviz
+RUN pip install pygraphviz
+RUN pip install sklearn
+RUN pip install matplotlib==3.2.1
 
 
 
